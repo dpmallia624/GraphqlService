@@ -1,0 +1,14 @@
+mutation MyMutation($studentRequest: StudentRequest) {
+    createStudent(
+        studentRequest: $studentRequest
+    ) {
+        id
+        firstName
+        lastName
+        email
+        addressResponse {
+            city
+            street
+        }
+    }
+}

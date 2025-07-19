@@ -1,0 +1,9 @@
+mutation MyMutation($id: ID, $studentRequest: StudentRequest) {
+    updateStudent(id: $id, studentRequest: $studentRequest ){
+        id
+        email
+        fullName
+        firstName
+        lastName
+    }
+}

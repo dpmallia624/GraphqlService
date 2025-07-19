@@ -1,0 +1,46 @@
+type Query {
+    bookById(id: ID): Book
+    studentById(id: ID) : StudentResponse
+}
+
+type Book {
+    id: ID!
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
+
+type StudentResponse {
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String
+    subjectResponses(filter: SubjectNameFilter) : [SubjectResponse]
+    fullName: String
+    addressResponse: AddressResponse
+}
+
+type SubjectResponse {
+    id: ID!
+    subjectName: String
+    marksObtained: ID
+}
+
+type AddressResponse {
+    id: ID!
+    street: String
+    city: String
+}
+
+enum SubjectNameFilter {
+    All,
+    Java,
+    MySQL,
+    MongoDB
+}

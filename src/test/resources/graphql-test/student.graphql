@@ -1,0 +1,19 @@
+query myquery($id: ID) {
+    studentById(id: $id) {
+        id
+        email
+        firstName
+        lastName
+        fullName
+        addressResponse {
+            id
+            street
+            city
+        }
+        subjectResponses{
+            id
+            subjectName
+            marksObtained
+        }
+    }
+}
